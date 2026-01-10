@@ -8,9 +8,16 @@ class Programador {
     std::string lenguajeFavorito;
     
     public:
+
+    //CONSTRUCTOR: Se llama igual que la clase y no tiene tipo de retorno
+
+    Programador(std::string n, std::string l){
+        //Es posible usar los setters dentro del constructor para heredar las validaciones
+        setNombre(n);
+        setLenguaje(l);
+    };
+
     //SETTERS: Métrodos para asignar valores con "reglas"
-
-
     void setNombre(std::string nuevoNombre){
         //validación: mínimo 3 caracteres
         if (nuevoNombre.length() >=3){
@@ -47,16 +54,19 @@ class Programador {
 };
 
 int main() {
-    // Instancia de clase, lugar donde se crea el objeto
-    Programador usuario;
+    // Creación de objetos con datos desde el inicio usando el constructor
+    Programador usuario("Bit", "C++");
+    Programador usuario2("Bit2", "Python");
+    Programador usuario3("Bit3", "JS");
 
-    //Esto debería disparar los mensajes de errores
-    usuario.setNombre("Ed");
-    usuario.setLenguaje("Java");
+    
 
-    //Esto debería funcionar correctamente
-    usuario.setNombre("Bit");
-    usuario.setLenguaje("C++");
+    //Creacion de objetos dando datos erroneos
+    Programador usuarioError("ed", "java");
+    Programador usuarioError2("el", "c#");
+    Programador usuarioError3("ey", "typescript");
+
+    
 
     usuario.saludar();
     

@@ -47,3 +47,10 @@ Define cómo se ejecuta el programa al presionar **F5**.
 1. Abrir cualquier archivo `.cpp`.
 2. Presionar **F5**.
 3. VS Code busca la tarea global, compila y lanza el depurador automáticamente.
+
+## 🚀 Avances en Programación Orientada a Objetos
+
+### Encapsulamiento y Constructores
+* **Atributos Privados:** Protegemos los datos internos de la clase `Programador`.
+* **Validación en Setters:** Implementamos lógica para evitar nombres cortos (<3 caracteres) y lenguajes fuera de la lista permitida.
+* **Constructores Robustos:** El constructor ahora inicializa el objeto llamando a los setters, garantizando que un objeto no pueda "nacer" con datos inválidos.
