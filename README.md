@@ -19,3 +19,31 @@ Durante las pruebas en `numbers.cpp`, aprendí que:
 
 ## 🚀 Configuración del Entorno
 El proyecto utiliza una configuración global de VS Code para compilar y depurar con **F5** de forma automática en cualquier subcarpeta.
+
+## 🔧 Configuración Global de Compilación (Linux)
+
+Para evitar crear carpetas `.vscode` en cada proyecto, configuramos un entorno de compilación global que funciona en cualquier subcarpeta del repositorio presionando **F5**.
+
+### 1. Ubicación de la configuración
+En VS Code para Linux, la configuración de usuario se encuentra en:  
+`~/.config/Code/User/`
+
+### 2. Archivos clave
+Se crearon/modificaron dos archivos en esa ruta:
+
+#### **tasks.json** (El Compilador)
+Define cómo se transforma el código `.cpp` en un ejecutable.  
+* **Comando:** `g++`
+* **Argumentos:** Se configuró para generar un ejecutable llamado `main` (o el nombre del archivo) en la misma carpeta del código fuente.
+* **Ubicación:** Es una "User Task", por lo que VS Code la reconoce en cualquier carpeta abierta.
+
+#### **launch.json** (El Depurador)
+Define cómo se ejecuta el programa al presionar **F5**.
+* **MIMode:** `gdb` (el depurador estándar de GNU/Linux).
+* **PreLaunchTask:** Debe coincidir exactamente con el nombre de la tarea definida en `tasks.json`.
+* **ExternalConsole:** Configurado en `false` para usar la "Debug Console" integrada de VS Code.
+
+### 3. Flujo de trabajo
+1. Abrir cualquier archivo `.cpp`.
+2. Presionar **F5**.
+3. VS Code busca la tarea global, compila y lanza el depurador automáticamente.
