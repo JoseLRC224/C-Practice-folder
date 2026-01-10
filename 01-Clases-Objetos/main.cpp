@@ -59,17 +59,12 @@ int main() {
     Programador usuario2("Bit2", "Python");
     Programador usuario3("Bit3", "JS");
 
-    
-
     //Creacion de objetos dando datos erroneos
     Programador usuarioError("ed", "java");
     Programador usuarioError2("el", "c#");
     Programador usuarioError3("ey", "typescript");
 
-    
-
     usuario.saludar();
-    
     
     //Bloque para que la terminal quede en espera y no cierre el programa
     std::cout << "\nPresiona Enter para finalizar...";
