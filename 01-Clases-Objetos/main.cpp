@@ -9,13 +9,29 @@ class Programador {
     
     public:
     //SETTERS: Métrodos para asignar valores con "reglas"
+
+
     void setNombre(std::string nuevoNombre){
-        nombre = nuevoNombre;
+        //validación: mínimo 3 caracteres
+        if (nuevoNombre.length() >=3){
+            nombre = nuevoNombre;
+        }
+        else{
+            std::cout << "Error: El nombre '" << nuevoNombre << "' es muy corto" << std::endl;
+
+        }
 
     }
 
     void setLenguaje(std::string nuevoLenguaje){
-        lenguajeFavorito = nuevoLenguaje;
+        //Validación: Solo acepta C++, Python o JS
+
+        if (nuevoLenguaje == "C++" || nuevoLenguaje == "Python" || nuevoLenguaje == "JS"){
+            lenguajeFavorito = nuevoLenguaje;
+        }
+        else {
+            std::cout << "Error: El lenguaje '" << nuevoLenguaje << "' no es valido" << std::endl;
+        }
 
     }
 
@@ -30,30 +46,21 @@ class Programador {
 
 };
 
-int main(){
-
-    
+int main() {
     // Instancia de clase, lugar donde se crea el objeto
-
     Programador usuario;
 
-    /*
-    usuario.nombre = "Bit",
-    usuario.lenguajeFavorito = "C++";
+    //Esto debería disparar los mensajes de errores
+    usuario.setNombre("Ed");
+    usuario.setLenguaje("Java");
 
-    // ESTE BLOQUE YA NO FUNCIONA: usuario.nombre = "Bit"; (deberia dar error al ser privado)
-    */
-
-    //USO DE LOS SETTERS:
+    //Esto debería funcionar correctamente
     usuario.setNombre("Bit");
     usuario.setLenguaje("C++");
 
-    //Llamar al metodo de la claase Programador
     usuario.saludar();
-
-    // SE USA UN GETTER para imprimir solo el nombre
-    std::cout << "El nombre registrado es: " << usuario.getNombre() << std::endl;
-
+    
+    
     //Bloque para que la terminal quede en espera y no cierre el programa
     std::cout << "\nPresiona Enter para finalizar...";
     std::cin.ignore();
