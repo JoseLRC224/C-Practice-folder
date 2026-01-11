@@ -54,3 +54,9 @@ Define cómo se ejecuta el programa al presionar **F5**.
 * **Atributos Privados:** Protegemos los datos internos de la clase `Programador`.
 * **Validación en Setters:** Implementamos lógica para evitar nombres cortos (<3 caracteres) y lenguajes fuera de la lista permitida.
 * **Constructores Robustos:** El constructor ahora inicializa el objeto llamando a los setters, garantizando que un objeto no pueda "nacer" con datos inválidos.
+
+## 📚 Bitácora de C++
+- **Clases:** Uso de `private` y `public`.
+- **Validación:** Implementación de Setters para proteger el salario mínimo.
+- **Memoria:** Diferencia entre `cin >>` y `getline()` para manejar espacios.
+
