@@ -1,6 +1,13 @@
-01-Clases-Objetos/main
+# Ignorar todos los ejecutables (archivos sin extensión en Linux es difícil de filtrar, 
+# así que mejor ignoramos por patrones o carpetas)
 *.out
-01-Clases-Objetos/main
-*.out
-01-Clases-Objetos/main
-01-Clases-Objetos/ejercicio_repaso
+*.exe
+*.o
+*.obj
+
+# Si compilas en una carpeta específica, ignora toda esa carpeta
+build/
+bin/
+
+# Ignorar archivos temporales de VS Code
+.vscode/
