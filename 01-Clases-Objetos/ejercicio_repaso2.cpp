@@ -43,6 +43,15 @@ class Programador {
             }
         }
 
+        //Metodo para ayuda entre programadores
+        void ayudarA(Programador &otro) {
+            cout << nombre << " esta ayudando a " << otro.nombre << "..." << endl;
+            // Le subimos el salario al otro usando su setter
+            double nuevoSalario = otro.getSalario() + 200;
+            otro.setSalario(nuevoSalario);
+        }
+
+
         void saludar() {
             double bono = calcularBono();
             cout << "--- Ficha de Programador ---" << endl;
@@ -58,37 +67,63 @@ class Programador {
 
 int main(){
 
+
+    //variables temporales
+    string nombre;
+    string lenguaje;
+    double sal;
+
+    cout << "Registro de nuevo programador" << endl;
+    cout << "Inserte el nombre del programador nuevo --> " << endl;
+    getline(cin, nombre);
+
+    cout << "Inserte el lenguaje del programador nuevo --> " << endl;
+    getline(cin, lenguaje);
+
+    cout << "Inserte salario del programador nuevo --> " << endl;
+    cin >> sal; 
+
+    Programador pNuevo(nombre, lenguaje, sal);
+    pNuevo.saludar();
     // Arreglo de 3 programadores
-    Programador equipo[] = {
-        Programador("Bit", "C++", 5000),
-        Programador("Novato", "Python", 7000),
-        Programador("Linus", "C", 7000)
-    };
-
-    double nominaTotal = 0;
-
-    cout << "=== REPORTE DE NÓMINA MENSUAL" << endl;
-
-    // recorriendo el arreglo
-    for (int i = 0; i < 3; i++) {
-        equipo[i].saludar(); // Imprime la ficha de cada uno
-
-        // 3. Sumamos el salario y el bono al total
-        // Usamos getSalario() porque el salario es PRIVADO
-        double totalPersona = equipo[i].getSalario() + equipo[i].calcularBono();
-        nominaTotal += totalPersona;
-    }
-    
-
-    cout << "DINERO TOTAL A PAGAR ESTE MES: $" << nominaTotal << endl;
-    cout << endl;
+    //Programador equipo[] = {
+    //    Programador("Bit", "C++", 5000),
+    //    Programador("Novato", "Python", 7000),
+    //    Programador("Linus", "C", 7000)
+    //};
+//
+    //double nominaTotal = 0;
+//
+    //cout << "=== REPORTE DE NÓMINA MENSUAL" << endl;
+//
+//
+//
+    //equipo[0].ayudarA(equipo[1]); // Bit ayuda a Novato
+    //equipo[1].saludar();          // Novato saluda con su nuevo salario
+//
+//
+    //// recorriendo el arreglo
+    //for (int i = 0; i < 3; i++) {
+    //    equipo[i].saludar(); // Imprime la ficha de cada uno
+//
+    //    // 3. Sumamos el salario y el bono al total
+    //    // Usamos getSalario() porque el salario es PRIVADO
+    //    double totalPersona = equipo[i].getSalario() + equipo[i].calcularBono();
+    //    nominaTotal += totalPersona;
+    //}
+    //
+//
+    //cout << "DINERO TOTAL A PAGAR ESTE MES: $" << nominaTotal << endl;
+    //cout << endl;
+//
+    //
 
     //prueba para acceder a datos del arreglo
     //equipo[0].saludar();
     //equipo[2].saludar();
-    cout << "Consulta de programador..." << endl;
-    cout << "El primero programador es: " << equipo[0].nombre << endl;
-    cout << "y su lenguaje de programacion es: " << equipo[0].lenguajeFavorito << endl; 
+    //cout << "Consulta de programador..." << endl;
+    //cout << "El primero programador es: " << equipo[0].nombre << endl;
+    //cout << "y su lenguaje de programacion es: " << equipo[0].lenguajeFavorito << endl; 
 
     cin.get();
     return 0;
